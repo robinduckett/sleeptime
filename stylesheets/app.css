@@ -7267,6 +7267,10 @@ a.badge:focus {
 }
 body {
   background: #333;
+  overflow: hidden;
+}
+html {
+  overflow: hidden;
 }
 header h1 {
   text-align: center;
