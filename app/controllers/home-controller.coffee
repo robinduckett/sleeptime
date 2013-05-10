@@ -17,6 +17,9 @@ module.exports = class HomeController extends Controller
         ), not 1
     ) document, window.navigator, "standalone"
 
+    document.ontouchmove = (e) ->
+      e.preventDefault()
+
     window.addEventListener "load", ->
       setTimeout (->
         window.scrollTo 0, 1
