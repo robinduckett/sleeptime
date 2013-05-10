@@ -39,6 +39,12 @@ module.exports = class HomeController extends Controller
     $('#bedtime-button').click () =>
       @_updateTimes(moment().format('YYYY-MM-DD ') + $('#time').val())
       $('#bedtime').toggle()
+      $('#nowbedtime').toggle()
+
+      if $('#bedtime:visible').length > 0
+        $('#bedtime-button').html('I want to go to bed now');
+      else
+        $('#bedtime-button').html('I know my bed time');
 
   _updateTimes: (time) =>
 
@@ -60,4 +66,4 @@ module.exports = class HomeController extends Controller
 
     for key, value of times
       if key isnt 'now' or typeof time is "undefined"
-        $(".#{key}").html(value.format('h:mm:ss a'))
+        $(".#{key}").html(value.format('h:mm a'))
