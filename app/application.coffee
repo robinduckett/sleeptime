@@ -19,7 +19,7 @@ module.exports = class Application extends Chaplin.Application
     # the root per default. You might change that in the options
     # if necessary:
     # @initRouter routes, pushState: false, root: '/subdir/'
-    @initRouter routes
+    @initRouter routes, pushState: true, root: '/sleeptime'
 
     # Dispatcher listens for routing events and initialises controllers.
     @initDispatcher controllerSuffix: '-controller'
