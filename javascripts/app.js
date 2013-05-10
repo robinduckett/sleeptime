@@ -102,7 +102,7 @@ window.require.register("application", function(exports, require, module) {
       Application.__super__.initialize.apply(this, arguments);
       this.initRouter(routes, {
         pushState: true,
-        root: '/'
+        root: '/sleeptime'
       });
       this.initDispatcher({
         controllerSuffix: '-controller'
