@@ -102,7 +102,7 @@ window.require.register("application", function(exports, require, module) {
       Application.__super__.initialize.apply(this, arguments);
       this.initRouter(routes, {
         pushState: true,
-        root: '/sleeptime'
+        root: '/'
       });
       this.initDispatcher({
         controllerSuffix: '-controller'
@@ -207,7 +207,13 @@ window.require.register("controllers/home-controller", function(exports, require
       });
       return $('#bedtime-button').click(function() {
         _this._updateTimes(moment().format('YYYY-MM-DD ') + $('#time').val());
-        return $('#bedtime').toggle();
+        $('#bedtime').toggle();
+        $('#nowbedtime').toggle();
+        if ($('#bedtime:visible').length > 0) {
+          return $('#bedtime-button').html('I want to go to bed now');
+        } else {
+          return $('#bedtime-button').html('I know my bed time');
+        }
       });
     };
 
@@ -234,7 +240,7 @@ window.require.register("controllers/home-controller", function(exports, require
       for (key in times) {
         value = times[key];
         if (key !== 'now' || typeof time === "undefined") {
-          _results.push($("." + key).html(value.format('h:mm:ss a')));
+          _results.push($("." + key).html(value.format('h:mm a')));
         } else {
           _results.push(void 0);
         }
@@ -520,7 +526,7 @@ window.require.register("views/templates/home", function(exports, require, modul
     
 
 
-    return "<div class=\"row-fluid\">\n	<div class=\"span12\">\n		<h5 style=\"text-align: center\">\n			The time now is <strong class=\"now\"></strong>\n		</h5>\n		<h5 style=\"text-align: center\">\n			It takes <strong>fourteen minutes</strong> to fall asleep on average. You should try to wake up at one of the following times:\n		</h5>\n		<h5 style=\"text-align: center\" id=\"times\">\n			<strong class=\"slot1\"></strong> or\n			<strong class=\"slot2\"></strong> or\n			<strong class=\"slot3\"></strong> or\n			<strong class=\"slot4\"></strong> or\n			<strong class=\"slot5\"></strong> or\n			<strong class=\"slot6\"></strong>\n		</h5>\n	</div>\n</div>\n\n<div class=\"row-fluid\" id=\"button\">\n	<div class=\"span12\">\n		<button id=\"bedtime-button\" class=\"btn btn-success\">I know my bed time</button>\n	</div>\n</div>\n\n<div class=\"row-fluid\" id=\"bedtime\">\n	<div class=\"span12\">\n		<h5>I want to go to bed at this time</h5>\n		<input id=\"time\" type=\"time\"></input>\n		<h5>Okay! Aim to go to bed for one of the following times.</h5>\n		<h5 style=\"text-align: center\" id=\"bottomtimes\">\n			<strong class=\"bottomslot1\"></strong> or\n			<strong class=\"bottomslot2\"></strong> or\n			<strong class=\"bottomslot3\"></strong> or\n			<strong class=\"bottomslot4\"></strong> or\n			<strong class=\"bottomslot5\"></strong> or\n			<strong class=\"bottomslot6\"></strong>\n		</h5>\n	</div>\n</div>";
+    return "<div class=\"row-fluid\" id=\"nowbedtime\">\n	<div class=\"span12\">\n		<h5 style=\"text-align: center\">\n			The time now is <strong class=\"now\"></strong>\n		</h5>\n		<h5 style=\"text-align: center\">\n			It takes <strong>fourteen minutes</strong> to fall asleep on average. You should try to wake up at one of the following times:\n		</h5>\n		<h5 style=\"text-align: center\" id=\"times\">\n			<strong class=\"slot1\"></strong> or\n			<strong class=\"slot2\"></strong> or\n			<strong class=\"slot3\"></strong> or\n			<strong class=\"slot4\"></strong> or\n			<strong class=\"slot5\"></strong> or\n			<strong class=\"slot6\"></strong>\n		</h5>\n	</div>\n</div>\n\n<div class=\"row-fluid\" id=\"bedtime\">\n	<div class=\"span12\">\n		<h5>I want to go to bed at this time</h5>\n		<input id=\"time\" type=\"time\"></input>\n		<h5>Okay! Aim to go to bed for one of the following times.</h5>\n		<h5 style=\"text-align: center\" id=\"bottomtimes\">\n			<strong class=\"bottomslot1\"></strong> or\n			<strong class=\"bottomslot2\"></strong> or\n			<strong class=\"bottomslot3\"></strong> or\n			<strong class=\"bottomslot4\"></strong> or\n			<strong class=\"bottomslot5\"></strong> or\n			<strong class=\"bottomslot6\"></strong>\n		</h5>\n	</div>\n</div>\n\n<div class=\"row-fluid\" id=\"button\">\n	<div class=\"span12\">\n		<button id=\"bedtime-button\" class=\"btn btn-success\">I know my bed time</button>\n	</div>\n</div>\n<div class=\"row-fluid\" id=\"watch\">\n	<div class=\"span12\">\n	<iframe src=\"http://ghbtns.com/github-btn.html?user=robinduckett&repo=sleeptime&type=watch&count=true\"\n	  allowtransparency=\"true\" frameborder=\"0\" scrolling=\"0\" width=\"110\" height=\"20\"></iframe>\n	</div>\n</div>";
     });
 });
 window.require.register("views/templates/site", function(exports, require, module) {
