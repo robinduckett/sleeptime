@@ -3,12 +3,16 @@
   "description": "Mobile Sleepyti.me",
   "launch_path": "/sleeptime/index.html",
   "icons": {
-    "128": "/sleeptime/images/icon.png"
+    "272": "/sleeptime/images/icon.png",
+    "120": "/sleeptime/images/icon.png",
+    "256": "/sleeptime/images/icon.png",
+    "64": "/sleeptime/images/icon.png",
+    "32": "/sleeptime/images/icon.png"
   },
   "developer": {
     "name": "Robin Duckett",
     "url": "http://robinduckett.github.io/sleeptime"
   },
-  "appcache_path": "/sleeptime.appcache",
+  "appcache_path": "/sleeptime/sleeptime.appcache",
   "default_locale": "en"
 }
