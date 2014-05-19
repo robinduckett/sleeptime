@@ -1,9 +1,9 @@
 {
   "name": "Sleep Time",
   "description": "Mobile Sleepyti.me",
-  "launch_path": "/index.html",
+  "launch_path": "/sleeptime/index.html",
   "icons": {
-    "128": "/images/icon.png"
+    "128": "/sleeptime/images/icon.png"
   },
   "developer": {
     "name": "Robin Duckett",
