@@ -4,10 +4,13 @@
   "launch_path": "/sleeptime/index.html",
   "icons": {
     "272": "/sleeptime/images/icon.png",
-    "120": "/sleeptime/images/icon.png",
-    "256": "/sleeptime/images/icon.png",
-    "64": "/sleeptime/images/icon.png",
-    "32": "/sleeptime/images/icon.png"
+    "120": "/sleeptime/images/iconx120.png",
+    "256": "/sleeptime/images/iconx256.png",
+    "64": "/sleeptime/images/iconx64.png",
+    "32": "/sleeptime/images/iconx32.png",
+    "90": "/sleeptime/images/iconx90.png",
+    "60": "/sleeptime/images/iconx60.png",
+    "30": "/sleeptime/images/iconx30.png"
   },
   "developer": {
     "name": "Robin Duckett",
