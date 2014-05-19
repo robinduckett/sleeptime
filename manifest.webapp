@@ -1,7 +1,7 @@
 {
   "name": "Sleep Time",
   "description": "Mobile Sleepyti.me",
-  "launch_path": "/sleeptime/index.html",
+  "launch_path": "/",
   "icons": {
     "272": "/sleeptime/images/icon.png",
     "120": "/sleeptime/images/iconx120.png",
@@ -16,6 +16,5 @@
     "name": "Robin Duckett",
     "url": "http://robinduckett.github.io/sleeptime"
   },
-  "appcache_path": "/sleeptime/sleeptime.appcache",
   "default_locale": "en"
 }
